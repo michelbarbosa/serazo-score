@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import javax.servlet.http.HttpServletResponse;
-import javax.websocket.server.PathParam;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -49,8 +48,8 @@ public class RegistrosHistoricosController {
 		}
 	}
 	
-	@GetMapping(path = "empresas/{login}/historico")
-	public List<RegistroHistoricoDto> listarHistorico(@PathParam(value = "login") String login, HttpServletResponse response) {
+	@GetMapping(path = "empresas/historico")
+	public List<RegistroHistoricoDto> listarHistorico(String login, HttpServletResponse response) {
 		try {
 			boolean existe = existenciaEmpresaService.existe(login);
 			if (!existe) {

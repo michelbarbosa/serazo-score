@@ -6,8 +6,10 @@ import java.net.URISyntaxException;
 
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+@Service
 public class ExistenciaEmpresaService {
 	
 	public boolean existe(String login) throws IOException, URISyntaxException {
